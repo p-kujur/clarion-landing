@@ -1,18 +1,22 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { featuredWorkItems } from '../data/workItems';
+import type { WorkItem } from '../types/content';
+import WorkModal from '../components/WorkModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function WorkAreasSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const [selectedWork, setSelectedWork] = useState<WorkItem | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (cardsRef.current) {
+        // grab all the cards to stagger them in
         const cards = cardsRef.current.querySelectorAll('.work-card');
         gsap.fromTo(
           cards,
@@ -62,6 +66,7 @@ export default function WorkAreasSection() {
           {featuredWorkItems.map((area) => (
             <div
               key={area.id}
+              onClick={() => setSelectedWork(area)}
               className="work-card group cursor-pointer bg-gray-50 border border-gray-200 rounded p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col h-full"
             >
               {/* Content */}
@@ -89,6 +94,9 @@ export default function WorkAreasSection() {
           ))}
         </div>
       </div>
+      {selectedWork && (
+        <WorkModal work={selectedWork} onClose={() => setSelectedWork(null)} />
+      )}
     </section>
   );
 }

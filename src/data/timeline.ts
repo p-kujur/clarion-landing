@@ -1,5 +1,6 @@
 import type { TimelineItem } from '../types/content';
 
+// TODO: we need to get the real dates from the client for these
 export const timelineItems: TimelineItem[] = [
   {
     year: 'YYYY',

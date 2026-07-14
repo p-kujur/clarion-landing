@@ -8,6 +8,7 @@ export default function Navigation() {
   const location = useLocation();
 
   useEffect(() => {
+    // slightly hacky way to check scroll state, but it works for now
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -43,8 +44,9 @@ export default function Navigation() {
             <div className="flex items-center">
               <img src="/images/clarion-logo.png" alt="" className="h-5 md:h-7 object-contain" aria-hidden="true" />
             </div>
-            <span className="font-semibold text-xl text-[#2B468B]" aria-hidden="true">
-              Clarion Global
+            <span className="flex items-baseline" aria-hidden="true">
+              <span className="font-sans font-bold text-2xl text-[#BA0C0C] tracking-wide">CLARION</span>
+              <span className="font-serif text-[1.35rem] text-[#6b6b6b] ml-1">global</span>
             </span>
           </Link>
 

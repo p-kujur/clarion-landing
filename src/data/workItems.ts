@@ -112,6 +112,7 @@ export const workItems: WorkItem[] = [
   },
 ];
 
+// pulling out featured items so we don't have to filter them in every component
 export const featuredWorkItems = workItems.filter((item) => item.featured);
 
 export const workCategories = [

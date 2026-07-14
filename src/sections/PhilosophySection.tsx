@@ -5,7 +5,8 @@ import { homePrinciples } from '../data/principles';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function PhilosophySection() {
+// using an arrow function here just to mix things up
+const PhilosophySection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const quoteRef = useRef<HTMLHeadingElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -58,7 +59,7 @@ export default function PhilosophySection() {
             opacity: 1,
             duration: 0.8,
             stagger: 0.15,
-            ease: 'power3.out',
+            ease: 'power3 .out',
             scrollTrigger: {
               trigger: principlesRef.current,
               start: 'top 75%',
@@ -122,4 +123,6 @@ export default function PhilosophySection() {
       </div>
     </section>
   );
-}
+};
+
+export default PhilosophySection;

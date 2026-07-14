@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/20 bg-[#1F2937]">
+    <footer className="border-t border-gray-200 bg-[#f9f5f0]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
 
 
@@ -14,11 +14,11 @@ export default function Footer() {
               <div className="flex items-center">
                 <img src="/images/clarion-logo.png" alt="Clarion" className="h-5 md:h-6 object-contain" />
               </div>
-              <span className="font-semibold text-lg text-white">
+              <span className="font-semibold text-lg text-[#2B468B]">
                 Clarion Global
               </span>
             </Link>
-            <p className="text-sm text-white/80 leading-relaxed max-w-sm">
+            <p className="text-sm text-gray-700 leading-relaxed max-w-sm">
               Education & Skill Pvt. Ltd. Crafting access, awareness, and impact
               through education and communication since 2015.
             </p>
@@ -26,7 +26,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-white/60 mb-4">
+            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-500 mb-4">
               Navigation
             </h4>
             <ul className="space-y-2">
@@ -39,7 +39,7 @@ export default function Footer() {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm text-white/80 hover:text-[#F58220] transition-colors"
+                    className="text-sm text-gray-700 hover:text-[#F58220] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -50,7 +50,7 @@ export default function Footer() {
 
           {/* Key Areas */}
           <div>
-            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-white/60 mb-4">
+            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-500 mb-4">
               Key Areas
             </h4>
             <ul className="space-y-2">
@@ -64,7 +64,7 @@ export default function Footer() {
                 <li key={area}>
                   <Link
                     to="/work"
-                    className="text-sm text-white/80 hover:text-[#F58220] transition-colors"
+                    className="text-sm text-gray-700 hover:text-[#F58220] transition-colors"
                   >
                     {area}
                   </Link>
@@ -75,11 +75,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/60 font-sans">
+        <div className="mt-16 pt-8 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-gray-500 font-sans">
+            {/* always keep the year current so we don't look stale */}
             &copy; {new Date().getFullYear()} Clarion Education & Skill Pvt. Ltd.
           </p>
-          <p className="text-xs text-white/60 font-sans">
+          <p className="text-xs text-gray-500 font-sans">
             Bihar &middot; Jharkhand &middot; West Bengal
           </p>
         </div>

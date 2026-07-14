@@ -6,6 +6,7 @@ export const homePrinciples = [
   'Communication, when designed responsibly, can shift behaviour at scale',
 ];
 
+// keeping these simple for now, might need to add icons later
 export const coreBeliefs: Belief[] = [
   {
     title: 'Education Beyond Classrooms',
