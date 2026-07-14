@@ -45,8 +45,7 @@ export default function Navigation() {
               <img src="/images/clarion-logo.png" alt="" className="h-5 md:h-7 object-contain" aria-hidden="true" />
             </div>
             <span className="flex items-baseline" aria-hidden="true">
-              <span className="font-sans font-bold text-2xl text-[#BA0C0C] tracking-wide">CLARION</span>
-              <span className="font-serif text-[1.35rem] text-[#6b6b6b] ml-1">global</span>
+              <span className="font-serif font-semibold text-[1.35rem] text-[#2B468B] ml-1">global</span>
             </span>
           </Link>
 
