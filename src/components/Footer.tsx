@@ -26,7 +26,7 @@ export default function Footer() {
             </Link>
             <p className="text-sm text-gray-300 leading-relaxed max-w-sm">
               Education & Skill Pvt. Ltd. Crafting access, awareness, and impact
-              through education and communication since 2015.
+              through education and communication.
             </p>
           </div>
 
