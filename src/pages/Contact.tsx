@@ -80,10 +80,10 @@ export default function Contact() {
                 Call Us
               </p>
               <a
-                href="tel:+919523685577"
+                href="tel:+919065541555"
                 className="font-sans text-lg text-gray-600 hover:text-[#F58220] transition-colors duration-300 block"
               >
-                +91 9523685577
+                +91 9065541555
               </a>
             </div>
 
