@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
+import ScrollToTop from './components/ScrollToTop';
 
 // lazy load pages to keep the bundle size down
 const Home = lazy(() => import('./pages/Home'));
@@ -32,6 +33,7 @@ function LoadingFallback() {
 export default function App() {
   return (
     <ErrorBoundary>
+      <ScrollToTop />
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<Layout><Home /></Layout>} />

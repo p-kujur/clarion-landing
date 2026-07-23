@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { ArrowUpRight, Phone, MapPin } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function Contact() {
   const pageRef = useRef<HTMLDivElement>(null);
@@ -8,20 +8,20 @@ export default function Contact() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        '.contact-hero',
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+        '.contact-hero-content',
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out' }
       );
       gsap.fromTo(
-        '.contact-item',
-        { y: 24, opacity: 0 },
+        '.contact-row',
+        { y: 20, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 0.7,
           ease: 'power3.out',
-          stagger: 0.15,
-          delay: 0.4,
+          stagger: 0.12,
+          delay: 0.3,
         }
       );
     }, pageRef);
@@ -30,84 +30,118 @@ export default function Contact() {
   }, []);
 
   return (
-    <div ref={pageRef} className="pt-14 bg-white min-h-screen">
-      {/* Hero */}
-      <section className="relative min-h-[45vh] flex items-center bg-[#2B468B] overflow-hidden">
-        <div className="contact-hero relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 py-32 text-center">
-          <p className="font-sans font-bold text-sm uppercase tracking-widest text-white/60 mb-6">
-            Get in Touch
-          </p>
-          <h1 className="font-sans font-bold text-4xl md:text-5xl lg:text-7xl text-white leading-tight tracking-wide max-w-4xl mx-auto mb-6">
-            LET'S START A <br className="hidden md:block" />
-            <span className="text-[#F58220]">CONVERSATION</span>
-          </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-light">
-            Whether you are a government body, CSR initiative, NGO, or academic
-            institution — we would love to explore how we can collaborate.
-          </p>
+    <div ref={pageRef} className="pt-14 bg-[#FAF8F5] min-h-screen">
+      {/* Top Hero Section - Navy Blue */}
+      <section className="relative bg-[#1b294a] text-white pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
+        {/* Subtle background grid lines */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+
+        <div className="max-w-6xl mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-12">
+            
+            {/* Left Content */}
+            <div className="contact-hero-content max-w-3xl">
+              <p className="font-mono text-xs uppercase tracking-[0.25em] text-blue-200/70 mb-6 flex items-center gap-3">
+                <span className="w-6 h-px bg-blue-200/40"></span>
+                PARTNERSHIPS & COLLABORATION
+              </p>
+              
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.1] mb-8">
+                Let&apos;s start a{' '}
+                <span className="italic font-normal text-[#F58220] block sm:inline">
+                  conversation.
+                </span>
+              </h1>
+              
+              <p className="text-white/80 text-base md:text-lg leading-relaxed font-light mb-2 max-w-xl">
+                Government body, CSR initiative, NGO, or academic institution — if you&apos;re building something for public good, we want to hear about it.
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
 
-      {/* Contact Details — Cards Layout */}
-      <section className="py-24 md:py-36 bg-gray-50/50 relative">
+      {/* Main Direct Line Section - Off-White / Cream */}
+      <section className="py-16 md:py-24 bg-[#FAF8F5]">
         <div className="max-w-6xl mx-auto px-6 lg:px-12">
-
-          {/* Primary CTA (Email) - Card */}
-          <div className="contact-item mb-16 md:mb-24 group flex flex-col items-center text-center bg-white rounded-3xl shadow-sm border border-gray-100 p-12 md:p-16 hover:shadow-md transition-all duration-300 max-w-4xl mx-auto">
-            <p className="font-sans font-bold text-xs uppercase tracking-widest text-[#F58220] mb-8 flex items-center justify-center gap-4">
-              <span className="w-8 md:w-12 h-px bg-[#F58220]"></span> Direct Email <span className="w-8 md:w-12 h-px bg-[#F58220]"></span>
+          
+          {/* Direct Line Label */}
+          <div className="contact-row mb-6">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-[#8c7b6c]">
+              DIRECT LINE
             </p>
-            <a
-              href="mailto:clarion.jh@gmail.com"
-              className="inline-flex flex-wrap justify-center items-center gap-4 md:gap-6 font-sans font-semibold text-xl md:text-4xl text-gray-900 transition-colors duration-500 hover:text-[#2B468B]"
-            >
-              <span className="break-all">clarion.jh@gmail.com</span>
-              <span className="p-3 md:p-5 rounded-full bg-gray-50 group-hover:bg-[#2B468B] group-hover:text-white transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-12 shrink-0">
-                <ArrowUpRight strokeWidth={2.5} className="w-6 h-6 md:w-10 md:h-10" />
-              </span>
-            </a>
           </div>
 
-          {/* Details Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-4xl mx-auto">
+          {/* Rows Container */}
+          <div className="divide-y divide-stone-300/70 border-t border-b border-stone-300/70">
             
-            {/* Phone */}
-            <div className="contact-item group flex flex-col items-center text-center bg-white rounded-3xl shadow-sm border border-gray-100 p-10 hover:shadow-md transition-all duration-300">
-              <div className="w-12 h-12 mb-6 rounded-xl bg-blue-50 flex items-center justify-center text-[#2B468B] group-hover:bg-[#F58220] group-hover:text-white transition-colors duration-300">
-                <Phone className="w-5 h-5" strokeWidth={2} />
-              </div>
-              <p className="font-sans font-bold text-sm uppercase tracking-widest text-gray-900 mb-3">
-                Call Us
-              </p>
+            {/* Email Row */}
+            <div className="contact-row py-4 md:py-6 group">
               <a
-                href="tel:+919065541555"
-                className="font-sans text-lg text-gray-600 hover:text-[#F58220] transition-colors duration-300 block"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=clarion.jh@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between gap-4 w-full"
               >
-                +91 9065541555
+                <div className="flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-10 md:gap-16">
+                  <span className="font-mono text-[11px] uppercase tracking-widest text-[#8c7b6c] w-20 sm:w-24 shrink-0">
+                    EMAIL
+                  </span>
+                  <span className="font-serif text-base sm:text-lg md:text-xl font-medium text-stone-900 group-hover:text-[#2B468B] transition-colors break-all">
+                    clarion.jh@gmail.com
+                  </span>
+                </div>
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-stone-400/80 flex items-center justify-center text-stone-700 group-hover:bg-[#2B468B] group-hover:text-white group-hover:border-[#2B468B] transition-all duration-300 shrink-0 transform group-hover:scale-105 group-hover:rotate-12">
+                  <ArrowUpRight strokeWidth={2} className="w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
               </a>
             </div>
 
-            {/* Office */}
-            <div className="contact-item group flex flex-col items-center text-center bg-white rounded-3xl shadow-sm border border-gray-100 p-10 hover:shadow-md transition-all duration-300">
-              <div className="w-12 h-12 mb-6 rounded-xl bg-blue-50 flex items-center justify-center text-[#2B468B] group-hover:bg-[#F58220] group-hover:text-white transition-colors duration-300">
-                <MapPin className="w-5 h-5" strokeWidth={2} />
-              </div>
-              <p className="font-sans font-bold text-sm uppercase tracking-widest text-gray-900 mb-3">
-                Headquarters
-              </p>
+            {/* Phone Row */}
+            <div className="contact-row py-4 md:py-6 group">
+              <a
+                href="tel:+919065541555"
+                className="flex items-center justify-between gap-4 w-full"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-10 md:gap-16">
+                  <span className="font-mono text-[11px] uppercase tracking-widest text-[#8c7b6c] w-20 sm:w-24 shrink-0">
+                    PHONE
+                  </span>
+                  <span className="font-serif text-base sm:text-lg md:text-xl font-medium text-stone-900 group-hover:text-[#2B468B] transition-colors">
+                    +91 9065541555
+                  </span>
+                </div>
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-stone-400/80 flex items-center justify-center text-stone-700 group-hover:bg-[#2B468B] group-hover:text-white group-hover:border-[#2B468B] transition-all duration-300 shrink-0 transform group-hover:scale-105 group-hover:rotate-12">
+                  <ArrowUpRight strokeWidth={2} className="w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
+              </a>
+            </div>
+
+            {/* Address Row */}
+            <div className="contact-row py-4 md:py-6 group">
               <a
                 href="https://www.google.com/maps/search/?api=1&query=Lucas+Building,+Opp.+Arya+Hotel,+Lalpur,+Ranchi+-+834001"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans text-lg text-gray-600 not-italic leading-relaxed hover:text-[#F58220] transition-colors duration-300 block"
+                className="flex items-center justify-between gap-4 w-full"
               >
-                Lucas Building,<br />
-                Opp. Arya Hotel, Lalpur,<br />
-                Ranchi &mdash; 834001
+                <div className="flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-10 md:gap-16">
+                  <span className="font-mono text-[11px] uppercase tracking-widest text-[#8c7b6c] w-20 sm:w-24 shrink-0">
+                    ADDRESS
+                  </span>
+                  <span className="font-serif text-base sm:text-lg md:text-xl font-medium text-stone-900 group-hover:text-[#2B468B] transition-colors leading-snug">
+                    Lucas Building, Opp. Arya Hotel, Lalpur, Ranchi &mdash; 834001
+                  </span>
+                </div>
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-stone-400/80 flex items-center justify-center text-stone-700 group-hover:bg-[#2B468B] group-hover:text-white group-hover:border-[#2B468B] transition-all duration-300 shrink-0 transform group-hover:scale-105 group-hover:rotate-12">
+                  <ArrowUpRight strokeWidth={2} className="w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
               </a>
             </div>
 
           </div>
+
         </div>
       </section>
     </div>
