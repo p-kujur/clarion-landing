@@ -31,8 +31,8 @@ export default function Contact() {
 
   return (
     <div ref={pageRef} className="pt-14 bg-[#FAF8F5] min-h-screen">
-      {/* Top Hero Section - Navy Blue */}
-      <section className="relative bg-[#1b294a] text-white pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
+      {/* Top Hero Section - Brand Blue */}
+      <section className="relative bg-[#2B468B] text-white pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
         {/* Subtle background grid lines */}
         <div className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
