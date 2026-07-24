@@ -1,19 +1,11 @@
-import { useState } from 'react';
 import { Link } from 'react-router';
-import WorkModal from './WorkModal';
-import { workItems } from '../data/workItems';
-import type { WorkItem } from '../types/content';
 
 export default function Footer() {
-  const [activeWork, setActiveWork] = useState<WorkItem | null>(null);
-
   return (
     <footer className="border-t border-[#1F2A4A] bg-[#1F2A4A]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
-
-
-        {/* Footer Grid - 4 Equal Symmetrical Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 items-start">
+        {/* Footer Grid - 3 Symmetrical Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start">
           {/* Brand Column */}
           <div className="flex flex-col">
             <Link to="/" className="flex items-center gap-3 mb-5 group">
@@ -24,14 +16,14 @@ export default function Footer() {
                 global
               </span>
             </Link>
-            <p className="text-sm text-gray-300 leading-relaxed pr-2">
+            <p className="text-sm text-gray-300 leading-relaxed pr-2 max-w-sm">
               Education & Skill Pvt. Ltd. Crafting access, awareness, and impact
               through education and communication.
             </p>
           </div>
 
           {/* Quick Links Column */}
-          <div className="flex flex-col">
+          <div className="flex flex-col md:pl-8">
             <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-400 mb-5 flex items-center h-7">
               Navigation
             </h4>
@@ -48,34 +40,6 @@ export default function Footer() {
                   >
                     {link.label}
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Key Areas Column */}
-          <div className="flex flex-col">
-            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-400 mb-5 flex items-center h-7">
-              Key Areas
-            </h4>
-            <ul className="space-y-2.5">
-              {[
-                { label: 'Notebook Initiative', id: 'five-rupee-notebook' },
-                { label: 'IEC & BCC', id: 'iec-behaviour-change' },
-                { label: 'Comic Learning', id: 'mask-man-comic' },
-                { label: 'Cultural Docs', id: 'cultural-documentation' },
-                { label: 'Strategic Comms', id: 'strategic-communication' },
-              ].map((area) => (
-                <li key={area.id}>
-                  <button
-                    onClick={() => {
-                      const work = workItems.find((w) => w.id === area.id);
-                      if (work) setActiveWork(work);
-                    }}
-                    className="text-sm text-gray-300 hover:text-[#F58220] transition-colors text-left"
-                  >
-                    {area.label}
-                  </button>
                 </li>
               ))}
             </ul>
@@ -132,13 +96,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-
-      {activeWork && (
-        <WorkModal
-          work={activeWork}
-          onClose={() => setActiveWork(null)}
-        />
-      )}
     </footer>
   );
 }
