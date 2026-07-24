@@ -92,11 +92,6 @@ export default function Footer() {
                   Lucas Building, Opp. Arya Hotel, Lalpur, Ranchi &mdash; 834001
                 </a>
               </li>
-              <li className="pt-2">
-                <Link to="/contact" className="text-xs font-bold text-[#F58220] hover:underline inline-flex items-center gap-1">
-                  Contact Page &rarr;
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
