@@ -85,9 +85,7 @@ export default function Contact() {
             {/* Email Row */}
             <div className="contact-row py-4 md:py-6 group">
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=clarion.jh@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:clarion.jh@gmail.com"
                 className="flex items-center justify-between gap-4 w-full"
               >
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-10 md:gap-16">

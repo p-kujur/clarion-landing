@@ -53,9 +53,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm text-gray-300">
               <li>
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=clarion.jh@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:clarion.jh@gmail.com"
                   className="hover:text-[#F58220] transition-colors break-all"
                 >
                   clarion.jh@gmail.com
