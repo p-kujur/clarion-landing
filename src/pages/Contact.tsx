@@ -6,6 +6,23 @@ import { useSEO } from '../hooks/useSEO';
 export default function Contact() {
   const pageRef = useRef<HTMLDivElement>(null);
 
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+    if (isMobile) {
+      window.location.href = 'mailto:clarion.jh@gmail.com';
+    } else {
+      window.open(
+        'https://mail.google.com/mail/?view=cm&fs=1&to=clarion.jh@gmail.com',
+        '_blank',
+        'noopener,noreferrer'
+      );
+    }
+  };
+
   useSEO({
     title: 'Contact Us | Clarion Education & Skill',
     description: 'Get in touch with Clarion Education & Skill Pvt. Ltd. for partnerships, CSR initiatives, and public good collaborations in Ranchi, Jharkhand.',
@@ -86,6 +103,7 @@ export default function Contact() {
             <div className="contact-row py-4 md:py-6 group">
               <a
                 href="mailto:clarion.jh@gmail.com"
+                onClick={handleEmailClick}
                 className="flex items-center justify-between gap-4 w-full"
               >
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-10 md:gap-16">

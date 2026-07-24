@@ -1,6 +1,23 @@
 import { Link } from 'react-router';
 
 export default function Footer() {
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+    if (isMobile) {
+      window.location.href = 'mailto:clarion.jh@gmail.com';
+    } else {
+      window.open(
+        'https://mail.google.com/mail/?view=cm&fs=1&to=clarion.jh@gmail.com',
+        '_blank',
+        'noopener,noreferrer'
+      );
+    }
+  };
+
   return (
     <footer className="border-t border-[#1F2A4A] bg-[#1F2A4A]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
@@ -54,6 +71,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:clarion.jh@gmail.com"
+                  onClick={handleEmailClick}
                   className="hover:text-[#F58220] transition-colors break-all"
                 >
                   clarion.jh@gmail.com
