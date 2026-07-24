@@ -88,7 +88,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm text-gray-300">
               <li>
-                <a href="mailto:clarion.jh@gmail.com" className="hover:text-[#F58220] transition-colors break-all">
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=clarion.jh@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#F58220] transition-colors break-all"
+                >
                   clarion.jh@gmail.com
                 </a>
               </li>
@@ -97,8 +102,15 @@ export default function Footer() {
                   +91 9065541555
                 </a>
               </li>
-              <li className="text-gray-400 text-xs pt-1 leading-relaxed">
-                Lucas Building, Opp. Arya Hotel, Lalpur, Ranchi &mdash; 834001
+              <li>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Lucas+Building,+Opp.+Arya+Hotel,+Lalpur,+Ranchi+-+834001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 text-xs pt-1 leading-relaxed hover:text-[#F58220] transition-colors block"
+                >
+                  Lucas Building, Opp. Arya Hotel, Lalpur, Ranchi &mdash; 834001
+                </a>
               </li>
               <li className="pt-2">
                 <Link to="/contact" className="text-xs font-bold text-[#F58220] hover:underline inline-flex items-center gap-1">
