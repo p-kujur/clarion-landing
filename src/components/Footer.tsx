@@ -13,9 +13,9 @@ export default function Footer() {
 
 
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-4">
             <Link to="/" className="flex items-center gap-3 mb-4">
               <div className="flex items-center">
                 <img src="/images/clarion-logo.png" alt="Clarion" className="h-5 md:h-7 object-contain" />
@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="md:col-span-2">
             <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-400 mb-4">
               Navigation
             </h4>
@@ -40,7 +40,6 @@ export default function Footer() {
                 { path: '/', label: 'Home' },
                 { path: '/about', label: 'About Us' },
                 { path: '/work', label: 'Key Areas' },
-                { path: '/contact', label: 'Contact' },
               ].map((link) => (
                 <li key={link.path}>
                   <Link
@@ -55,7 +54,7 @@ export default function Footer() {
           </div>
 
           {/* Key Areas */}
-          <div>
+          <div className="md:col-span-3">
             <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-400 mb-4">
               Key Areas
             </h4>
@@ -79,6 +78,33 @@ export default function Footer() {
                   </button>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Contact Us Column */}
+          <div className="md:col-span-3">
+            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-400 mb-4">
+              Contact Us
+            </h4>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li>
+                <a href="mailto:clarion.jh@gmail.com" className="hover:text-[#F58220] transition-colors break-all">
+                  clarion.jh@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+919065541555" className="hover:text-[#F58220] transition-colors">
+                  +91 9065541555
+                </a>
+              </li>
+              <li className="text-gray-400 text-xs mt-2 leading-relaxed">
+                Lucas Building, Opp. Arya Hotel, Lalpur, Ranchi &mdash; 834001
+              </li>
+              <li className="pt-2">
+                <Link to="/contact" className="text-xs font-bold text-[#F58220] hover:underline inline-flex items-center gap-1">
+                  Contact Page &rarr;
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
