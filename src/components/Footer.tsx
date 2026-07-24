@@ -12,30 +12,30 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
 
 
-        {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          {/* Brand */}
-          <div className="md:col-span-4">
-            <Link to="/" className="flex items-center gap-3 mb-4">
+        {/* Footer Grid - 4 Equal Symmetrical Columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 items-start">
+          {/* Brand Column */}
+          <div className="flex flex-col">
+            <Link to="/" className="flex items-center gap-3 mb-5 group">
               <div className="flex items-center">
-                <img src="/images/clarion-logo.png" alt="Clarion" className="h-5 md:h-7 object-contain" />
+                <img src="/images/clarion-logo.png" alt="Clarion" className="h-6 md:h-7 object-contain" />
               </div>
               <span className="font-serif font-semibold text-[1.35rem] text-white flex items-baseline">
                 global
               </span>
             </Link>
-            <p className="text-sm text-gray-300 leading-relaxed max-w-sm">
+            <p className="text-sm text-gray-300 leading-relaxed pr-2">
               Education & Skill Pvt. Ltd. Crafting access, awareness, and impact
               through education and communication.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="md:col-span-2">
-            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-400 mb-4">
+          {/* Quick Links Column */}
+          <div className="flex flex-col">
+            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-400 mb-5 flex items-center h-7">
               Navigation
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {[
                 { path: '/', label: 'Home' },
                 { path: '/about', label: 'About Us' },
@@ -53,12 +53,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Key Areas */}
-          <div className="md:col-span-3">
-            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-400 mb-4">
+          {/* Key Areas Column */}
+          <div className="flex flex-col">
+            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-400 mb-5 flex items-center h-7">
               Key Areas
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {[
                 { label: 'Notebook Initiative', id: 'five-rupee-notebook' },
                 { label: 'IEC & BCC', id: 'iec-behaviour-change' },
@@ -82,11 +82,11 @@ export default function Footer() {
           </div>
 
           {/* Contact Us Column */}
-          <div className="md:col-span-3">
-            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-400 mb-4">
+          <div className="flex flex-col">
+            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-gray-400 mb-5 flex items-center h-7">
               Contact Us
             </h4>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2.5 text-sm text-gray-300">
               <li>
                 <a href="mailto:clarion.jh@gmail.com" className="hover:text-[#F58220] transition-colors break-all">
                   clarion.jh@gmail.com
@@ -97,7 +97,7 @@ export default function Footer() {
                   +91 9065541555
                 </a>
               </li>
-              <li className="text-gray-400 text-xs mt-2 leading-relaxed">
+              <li className="text-gray-400 text-xs pt-1 leading-relaxed">
                 Lucas Building, Opp. Arya Hotel, Lalpur, Ranchi &mdash; 834001
               </li>
               <li className="pt-2">
