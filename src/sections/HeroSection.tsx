@@ -1,7 +1,7 @@
 import { useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router';
 import gsap from 'gsap';
-import { Facebook, Instagram, Twitter, ArrowUpRight } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, ArrowUpRight } from 'lucide-react';
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -81,7 +81,7 @@ export default function HeroSection() {
         <div className="max-w-4xl mx-auto lg:mx-0 lg:ml-[15%]">
           <h1
             ref={titleRef}
-            className="font-sans font-bold text-4xl sm:text-5xl md:text-6xl text-white leading-[1.2] mb-8 tracking-wide"
+            className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-[1.25] mb-8 tracking-wide"
           >
             CRAFTING ACCESS, AWARENESS,
             <br />
@@ -101,9 +101,9 @@ export default function HeroSection() {
           </p>
 
           <div ref={socialRef} className="flex items-center gap-5 mb-10 text-white">
-            <a href="https://www.facebook.com/clarioneduskill" target="_blank" rel="noopener noreferrer" className="hover:text-[#F58220] transition-colors"><Facebook size={22} fill="currentColor" strokeWidth={0} /></a>
-            <a href="https://www.instagram.com/eklavyaplus/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F58220] transition-colors"><Instagram size={22} /></a>
-            <a href="https://twitter.com/clarioneduskill" target="_blank" rel="noopener noreferrer" className="hover:text-[#F58220] transition-colors"><Twitter size={22} fill="currentColor" strokeWidth={0} /></a>
+            <a href="https://www.facebook.com/clarioneduskill" target="_blank" rel="noopener noreferrer" className="hover:text-[#F58220] transition-colors" aria-label="Facebook"><Facebook size={22} fill="currentColor" strokeWidth={0} /></a>
+            <a href="https://www.instagram.com/eklavyaplus/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F58220] transition-colors" aria-label="Instagram"><Instagram size={22} /></a>
+            <a href="https://www.linkedin.com/company/clarion-education-and-skill-pvt-ltd" target="_blank" rel="noopener noreferrer" className="hover:text-[#F58220] transition-colors" aria-label="LinkedIn"><Linkedin size={22} fill="currentColor" strokeWidth={0} /></a>
           </div>
 
           <div ref={ctaRef}>

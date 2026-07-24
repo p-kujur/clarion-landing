@@ -74,7 +74,7 @@ export default function About() {
           <p className="font-sans font-bold text-sm uppercase tracking-widest text-white/70 mb-6">
             About Clarion
           </p>
-          <h1 className="font-sans font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight tracking-wide max-w-4xl">
+          <h1 className="font-sans font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight tracking-wide max-w-4xl">
             CRAFTING ACCESS, AWARENESS, AND IMPACT
           </h1>
         </div>

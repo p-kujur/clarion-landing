@@ -61,7 +61,7 @@ export default function Work() {
           <p className="font-sans font-bold text-sm uppercase tracking-widest text-white/70 mb-6">
             Our Work
           </p>
-          <h1 className="font-sans font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight tracking-wide max-w-4xl mb-6">
+          <h1 className="font-sans font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight tracking-wide max-w-4xl mb-6">
             KEY AREAS OF IMPACT
           </h1>
           <p className="text-lg text-white/90 max-w-2xl mx-auto lg:mx-0">
