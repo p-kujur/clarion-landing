@@ -44,16 +44,16 @@ export default function Footer() {
             <h4 className="font-sans font-bold text-xs uppercase tracking-[0.2em] text-gray-400 mb-5 flex items-center h-7">
               Navigation
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {[
                 { path: '/', label: 'Home' },
                 { path: '/about', label: 'About Us' },
                 { path: '/work', label: 'Key Areas' },
               ].map((link) => (
-                <li key={link.path}>
+                <li key={link.path} className="min-h-[1.75rem] flex items-center">
                   <Link
                     to={link.path}
-                    className="text-sm text-gray-300 hover:text-[#F58220] transition-colors"
+                    className="text-sm text-gray-300 hover:text-[#F58220] transition-colors leading-snug"
                   >
                     {link.label}
                   </Link>
@@ -67,27 +67,30 @@ export default function Footer() {
             <h4 className="font-sans font-bold text-xs uppercase tracking-[0.2em] text-gray-400 mb-5 flex items-center h-7">
               Contact Us
             </h4>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li>
+            <ul className="space-y-4">
+              <li className="min-h-[1.75rem] flex items-center">
                 <a
                   href="mailto:clarion.jh@gmail.com"
                   onClick={handleEmailClick}
-                  className="hover:text-[#F58220] transition-colors break-all"
+                  className="text-sm text-gray-300 hover:text-[#F58220] transition-colors break-all leading-snug"
                 >
                   clarion.jh@gmail.com
                 </a>
               </li>
-              <li>
-                <a href="tel:+919065541555" className="hover:text-[#F58220] transition-colors">
+              <li className="min-h-[1.75rem] flex items-center">
+                <a
+                  href="tel:+919065541555"
+                  className="text-sm text-gray-300 hover:text-[#F58220] transition-colors leading-snug"
+                >
                   +91 9065541555
                 </a>
               </li>
-              <li>
+              <li className="min-h-[1.75rem] flex items-center">
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Lucas+Building,+Opp.+Arya+Hotel,+Lalpur,+Ranchi+-+834001"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 text-xs leading-relaxed hover:text-[#F58220] transition-colors block"
+                  className="text-sm text-gray-300 hover:text-[#F58220] transition-colors leading-snug block"
                 >
                   Lucas Building, Opp. Arya Hotel, Lalpur, Ranchi &mdash; 834001
                 </a>
