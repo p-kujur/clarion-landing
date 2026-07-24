@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 
-
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -14,9 +13,23 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(location.pathname);
+  if (prevPathname !== location.pathname) {
+    setPrevPathname(location.pathname);
     setMobileOpen(false);
-  }, [location]);
+  }
+
+  // Handle Escape key to close mobile menu
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMobileOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [mobileOpen]);
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -70,7 +83,9 @@ export default function Navigation() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden text-[#171717] p-2"
-            aria-label="Toggle menu"
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               {mobileOpen ? (
@@ -90,25 +105,35 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu & Backdrop Overlay */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
-          <div className="px-6 py-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`font-sans font-semibold text-lg transition-colors ${
-                  isActive(link.path)
-                    ? 'text-[#2B468B]'
-                    : 'text-[#171717] hover:text-[#2B468B]'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+        <>
+          <div
+            className="fixed inset-0 top-[70px] bg-black/40 z-40 md:hidden"
+            onClick={() => setMobileOpen(false)}
+            aria-hidden="true"
+          />
+          <div
+            id="mobile-menu"
+            className="md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full z-50"
+          >
+            <div className="px-6 py-4 flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`font-sans font-semibold text-lg transition-colors ${
+                    isActive(link.path)
+                      ? 'text-[#2B468B]'
+                      : 'text-[#171717] hover:text-[#2B468B]'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        </>
       )}
     </nav>
   );

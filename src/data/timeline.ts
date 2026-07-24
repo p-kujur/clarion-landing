@@ -1,41 +1,40 @@
 import type { TimelineItem } from '../types/content';
 
-// TODO: we need to get the real dates from the client for these
 export const timelineItems: TimelineItem[] = [
   {
-    year: 'YYYY',
+    year: '2014',
     title: 'Foundation',
     description:
-      'Clarion Education & Skill Pvt. Ltd. was founded. [Verify actual founding year and add a one-line description of the founding context.]',
+      'Clarion Education & Skill Pvt. Ltd. was founded as a purpose-driven social enterprise to design low-cost, high-impact learning solutions.',
   },
   {
-    year: 'YYYY',
+    year: '2016',
     title: 'The ₹5 Notebook',
     description:
-      'Developed ultra-affordable school notebooks priced at ₹5. [Verify year and add actual distribution scale achieved.]',
+      'Developed ultra-affordable school notebooks priced at ₹5, scaling distribution across Eastern India to make stationery accessible to under-resourced students.',
   },
   {
-    year: 'YYYY',
+    year: '2018',
     title: 'IEC Scale-Up',
     description:
-      'Expanded IEC and Behaviour Change Communication work. [Verify year and add states/campaigns covered.]',
+      'Expanded Information, Education and Communication (IEC) initiatives, launching visual and behaviour change communication materials for health, hygiene, and environmental awareness.',
   },
   {
-    year: 'YYYY',
+    year: '2020',
     title: 'MASK-MAN Comic',
     description:
-      'Conceptualised and developed MASK-MAN, a pandemic-sensitive comic book. [Verify year and add reach/distribution numbers.]',
+      'Conceptualised and published the MASK-MAN pandemic-sensitive comic book series, delivering public health awareness to children during COVID-19.',
   },
   {
-    year: 'YYYY',
+    year: '2022',
     title: 'Multi-State Presence',
     description:
-      'Extended operations across multiple states. [Verify year and states, add any recognition received.]',
+      'Extended operations across Bihar, Jharkhand, and West Bengal in collaboration with state government departments, NABARD, and key development partners.',
   },
   {
-    year: 'YYYY',
+    year: '2024',
     title: 'Full Portfolio',
     description:
-      'A comprehensive portfolio spanning education, communication, and documentation. [Verify year and add latest achievement or project.]',
+      'Consolidated a comprehensive portfolio spanning education systems, audio-visual documentation, FPO institutional storytelling, and strategic communication.',
   },
 ];

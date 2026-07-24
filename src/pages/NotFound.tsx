@@ -1,6 +1,11 @@
 import { Link } from 'react-router';
+import { useSEO } from '../hooks/useSEO';
 
 export default function NotFound() {
+  useSEO({
+    title: 'Page Not Found | Clarion Education & Skill',
+    description: 'The page you are looking for does not exist or has been moved.',
+  });
   return (
     <div className="min-h-screen bg-[#1a0e08] flex flex-col items-center justify-center px-6">
       <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#c8956c] mb-4">

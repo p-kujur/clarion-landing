@@ -59,7 +59,7 @@ const PhilosophySection = () => {
             opacity: 1,
             duration: 0.8,
             stagger: 0.15,
-            ease: 'power3 .out',
+            ease: 'power3.out',
             scrollTrigger: {
               trigger: principlesRef.current,
               start: 'top 75%',

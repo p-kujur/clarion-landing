@@ -235,11 +235,13 @@ export default function FlowField() {
 
     // Compile shaders
     function compile(type: number, src: string) {
-      const s = gl!.createShader(type)!;
+      const s = gl!.createShader(type);
+      if (!s) return null;
       gl!.shaderSource(s, src);
       gl!.compileShader(s);
       if (!gl!.getShaderParameter(s, gl!.COMPILE_STATUS)) {
         console.error('Shader error:', gl!.getShaderInfoLog(s));
+        gl!.deleteShader(s);
         return null;
       }
       return s;
@@ -247,14 +249,28 @@ export default function FlowField() {
 
     const vs = compile(gl.VERTEX_SHADER, VERT_SRC);
     const fs = compile(gl.FRAGMENT_SHADER, FRAG_SRC);
-    if (!vs || !fs) return;
+    if (!vs || !fs) {
+      if (vs) gl.deleteShader(vs);
+      if (fs) gl.deleteShader(fs);
+      return;
+    }
 
-    const prog = gl.createProgram()!;
+    const prog = gl.createProgram();
+    if (!prog) {
+      gl.deleteShader(vs);
+      gl.deleteShader(fs);
+      return;
+    }
     gl.attachShader(prog, vs);
     gl.attachShader(prog, fs);
     gl.linkProgram(prog);
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
       console.error('Link error:', gl.getProgramInfoLog(prog));
+      gl.detachShader(prog, vs);
+      gl.detachShader(prog, fs);
+      gl.deleteShader(vs);
+      gl.deleteShader(fs);
+      gl.deleteProgram(prog);
       return;
     }
     gl.useProgram(prog);
@@ -310,6 +326,9 @@ export default function FlowField() {
       gl!.uniform1f(uSheen, 1.0);
       gl!.uniform2f(uMouse, mx, my);
       gl!.drawArrays(gl!.TRIANGLES, 0, 3);
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
       animId = requestAnimationFrame(render);
     }
 
@@ -329,6 +348,21 @@ export default function FlowField() {
       canvas!.removeEventListener('mouseleave', onLeave);
       window.removeEventListener('resize', onResize);
       document.removeEventListener('visibilitychange', onVis);
+
+      if (gl) {
+        if (buf) gl.deleteBuffer(buf);
+        if (prog) {
+          if (vs) {
+            gl.detachShader(prog, vs);
+            gl.deleteShader(vs);
+          }
+          if (fs) {
+            gl.detachShader(prog, fs);
+            gl.deleteShader(fs);
+          }
+          gl.deleteProgram(prog);
+        }
+      }
     };
   }, []);
 

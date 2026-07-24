@@ -136,20 +136,45 @@ export default function MoonlitRipple() {
     if (!gl) return;
 
     function compile(type: number, src: string) {
-      const s = gl!.createShader(type)!;
+      const s = gl!.createShader(type);
+      if (!s) return null;
       gl!.shaderSource(s, src);
       gl!.compileShader(s);
-      if (!gl!.getShaderParameter(s, gl!.COMPILE_STATUS))
+      if (!gl!.getShaderParameter(s, gl!.COMPILE_STATUS)) {
         console.error('Shader:', gl!.getShaderInfoLog(s));
+        gl!.deleteShader(s);
+        return null;
+      }
       return s;
     }
 
-    const prog = gl.createProgram()!;
-    gl.attachShader(prog, compile(gl.VERTEX_SHADER, VERT));
-    gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, FRAG));
+    const vs = compile(gl.VERTEX_SHADER, VERT);
+    const fs = compile(gl.FRAGMENT_SHADER, FRAG);
+    if (!vs || !fs) {
+      if (vs) gl.deleteShader(vs);
+      if (fs) gl.deleteShader(fs);
+      return;
+    }
+
+    const prog = gl.createProgram();
+    if (!prog) {
+      gl.deleteShader(vs);
+      gl.deleteShader(fs);
+      return;
+    }
+
+    gl.attachShader(prog, vs);
+    gl.attachShader(prog, fs);
     gl.linkProgram(prog);
-    if (!gl.getProgramParameter(prog, gl.LINK_STATUS))
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
       console.error('Link:', gl.getProgramInfoLog(prog));
+      gl.detachShader(prog, vs);
+      gl.detachShader(prog, fs);
+      gl.deleteShader(vs);
+      gl.deleteShader(fs);
+      gl.deleteProgram(prog);
+      return;
+    }
     gl.useProgram(prog);
 
     const buf = gl.createBuffer();
@@ -186,6 +211,9 @@ export default function MoonlitRipple() {
       gl!.uniform1f(uTime, now * 0.001);
       gl!.uniform2f(uMouse, mx, my);
       gl!.drawArrays(gl!.TRIANGLES, 0, 3);
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
       animId = requestAnimationFrame(render);
     }
 
@@ -201,6 +229,21 @@ export default function MoonlitRipple() {
       canvas!.removeEventListener('mouseleave', onLeave);
       window.removeEventListener('resize', onResize);
       document.removeEventListener('visibilitychange', onVis);
+
+      if (gl) {
+        if (buf) gl.deleteBuffer(buf);
+        if (prog) {
+          if (vs) {
+            gl.detachShader(prog, vs);
+            gl.deleteShader(vs);
+          }
+          if (fs) {
+            gl.detachShader(prog, fs);
+            gl.deleteShader(fs);
+          }
+          gl.deleteProgram(prog);
+        }
+      }
     };
   }, []);
 

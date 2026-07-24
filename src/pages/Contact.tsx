@@ -1,9 +1,15 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ArrowUpRight } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 export default function Contact() {
   const pageRef = useRef<HTMLDivElement>(null);
+
+  useSEO({
+    title: 'Contact Us | Clarion Education & Skill',
+    description: 'Get in touch with Clarion Education & Skill Pvt. Ltd. for partnerships, CSR initiatives, and public good collaborations in Ranchi, Jharkhand.',
+  });
 
   useEffect(() => {
     const ctx = gsap.context(() => {

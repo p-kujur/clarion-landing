@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router';
 import gsap from 'gsap';
 import { Facebook, Instagram, Twitter, ArrowUpRight } from 'lucide-react';
@@ -9,6 +9,18 @@ export default function HeroSection() {
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const socialRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        left: `${(i * 37 + 13) % 100}%`,
+        top: `${(i * 53 + 7) % 100}%`,
+        animationDelay: `${(i * 0.25) % 5}s`,
+        animationDuration: `${4 + ((i * 0.3) % 6)}s`,
+      })),
+    []
+  );
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -50,15 +62,15 @@ export default function HeroSection() {
     >
       {/* Animated particles overlay (Kept from original but recolored to fit the new blue theme) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => (
+        {particles.map((p) => (
           <div
-            key={i}
+            key={p.id}
             className="absolute w-1.5 h-1.5 rounded-full bg-white/20 animate-float"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${4 + Math.random() * 6}s`,
+              left: p.left,
+              top: p.top,
+              animationDelay: p.animationDelay,
+              animationDuration: p.animationDuration,
             }}
           />
         ))}

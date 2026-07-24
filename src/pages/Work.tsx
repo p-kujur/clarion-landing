@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { workCategories, workItems } from '../data/workItems';
 import type { WorkItem } from '../types/content';
 import WorkModal from '../components/WorkModal';
+import { useSEO } from '../hooks/useSEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,6 +12,11 @@ export default function Work() {
   const pageRef = useRef<HTMLDivElement>(null);
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedWork, setSelectedWork] = useState<WorkItem | null>(null);
+
+  useSEO({
+    title: 'Our Work & Key Initiatives | Clarion Education & Skill',
+    description: "Explore Clarion's key areas of impact: low-cost stationery, institutional documentation, community awareness campaigns, and educational innovations.",
+  });
 
   const filteredWork =
     activeCategory === 'All'

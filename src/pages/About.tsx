@@ -3,11 +3,17 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { coreBeliefs } from '../data/principles';
 import { timelineItems } from '../data/timeline';
+import { useSEO } from '../hooks/useSEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   const pageRef = useRef<HTMLDivElement>(null);
+
+  useSEO({
+    title: 'About Us | Clarion Education & Skill',
+    description: "Learn about Clarion's mission, story, core philosophy, and journey as a purpose-driven social enterprise operating across Bihar, Jharkhand, and West Bengal.",
+  });
 
   useEffect(() => {
     const ctx = gsap.context(() => {
