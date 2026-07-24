@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { workCategories, workItems } from '../data/workItems';
 import type { WorkItem } from '../types/content';
+import WorkCard from '../components/WorkCard';
 import WorkModal from '../components/WorkModal';
 import { useSEO } from '../hooks/useSEO';
 
@@ -59,16 +60,13 @@ export default function Work() {
       <section className="relative min-h-[40vh] flex items-center bg-[#2B468B] overflow-hidden">
         <div className="work-hero-content relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 py-32 text-center lg:text-left">
           <p className="font-sans font-bold text-sm uppercase tracking-widest text-white/70 mb-6">
-            Our Work
+            Key Projects & Flagship Initiatives
           </p>
           <h1 className="font-sans font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight tracking-wide max-w-4xl mb-6">
-            KEY AREAS OF IMPACT
+            KEY AREAS OF WORK
           </h1>
-          <p className="text-lg text-white/90 max-w-2xl mx-auto lg:mx-0">
-            From disrupting school stationery ecosystems to documenting
-            institutional journeys, our work demonstrates how thoughtful design,
-            strategic partnerships, and deep contextual understanding can
-            transform ordinary tools into powerful agents of change.
+          <p className="text-lg text-white/90 max-w-3xl mx-auto lg:mx-0">
+            From affordable school notebook programmes to smart classroom solutions, digital language labs, and government campaign integrations, explore our multidisciplinary initiatives transforming educational ecosystems.
           </p>
         </div>
       </section>
@@ -99,30 +97,12 @@ export default function Work() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredWork.map((item) => (
-              <div
+              <WorkCard
                 key={item.id}
-                className="work-card-item group cursor-pointer bg-white border border-gray-200 rounded p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col h-full"
+                item={item}
                 onClick={() => setSelectedWork(item)}
-              >
-                <div className="mb-auto">
-                  <p className="font-sans font-bold text-xs uppercase tracking-wider text-[#F58220] mb-3">
-                    {item.category}
-                  </p>
-                  <h3 className="font-sans font-bold text-xl text-gray-900 group-hover:text-[#2B468B] transition-colors mb-4">
-                    {item.title}
-                  </h3>
-                  <p className="text-base text-gray-600 leading-relaxed line-clamp-3 mb-6">
-                    {item.description}
-                  </p>
-                </div>
-                <div className="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2 text-sm font-semibold text-[#2B468B] group-hover:text-[#F58220] transition-colors">
-                  Read more
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </div>
-              </div>
+                className="work-card-item"
+              />
             ))}
           </div>
         </div>
@@ -134,4 +114,4 @@ export default function Work() {
       )}
     </div>
   );
-}
+}

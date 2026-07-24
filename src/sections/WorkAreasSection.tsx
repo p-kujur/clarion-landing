@@ -4,28 +4,49 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { featuredWorkItems } from '../data/workItems';
 import type { WorkItem } from '../types/content';
+import WorkCard from '../components/WorkCard';
 import WorkModal from '../components/WorkModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function WorkAreasSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const [selectedWork, setSelectedWork] = useState<WorkItem | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Header reveal
+      if (headerRef.current) {
+        gsap.fromTo(
+          headerRef.current,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: headerRef.current,
+              start: 'top 75%',
+              toggleActions: 'play none none reverse',
+            },
+          }
+        );
+      }
+
+      // Cards stagger reveal
       if (cardsRef.current) {
-        // grab all the cards to stagger them in
         const cards = cardsRef.current.querySelectorAll('.work-card');
         gsap.fromTo(
           cards,
-          { y: 60, opacity: 0 },
+          { y: 40, opacity: 0 },
           {
             y: 0,
             opacity: 1,
             duration: 0.8,
-            stagger: 0.2,
+            stagger: 0.15,
             ease: 'power3.out',
             scrollTrigger: {
               trigger: cardsRef.current,
@@ -41,13 +62,16 @@ export default function WorkAreasSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-32 bg-white">
+    <section ref={sectionRef} className="relative py-20 md:py-32 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
+        <div
+          ref={headerRef}
+          className="flex flex-col md:flex-row md:items-end md:justify-between mb-16"
+        >
           <div>
             <p className="font-sans font-bold text-sm uppercase tracking-widest text-[#F58220] mb-4">
-              Selected Initiatives
+              Key Projects & Flagship Initiatives
             </p>
             <h2 className="font-sans font-bold text-3xl md:text-5xl text-gray-900 tracking-wide">
               Key Areas of Work
@@ -63,34 +87,13 @@ export default function WorkAreasSection() {
 
         {/* Cards Grid */}
         <div ref={cardsRef} className="grid md:grid-cols-2 gap-8">
-          {featuredWorkItems.map((area) => (
-            <div
+          {featuredWorkItems.slice(0, 4).map((area) => (
+            <WorkCard
               key={area.id}
+              item={area}
               onClick={() => setSelectedWork(area)}
-              className="work-card group cursor-pointer bg-gray-50 border border-gray-200 rounded p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col h-full"
-            >
-              {/* Content */}
-              <div className="mb-auto">
-                {/* Title */}
-                <h3 className="font-sans font-bold text-2xl text-gray-900 group-hover:text-[#2B468B] transition-colors mb-4">
-                  {area.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-base text-gray-600 leading-relaxed">
-                  {area.description}
-                </p>
-              </div>
-
-              {/* Action */}
-              <div className="mt-8 pt-6 border-t border-gray-200 flex items-center gap-2 text-sm font-bold text-[#2B468B] group-hover:text-[#F58220] transition-colors">
-                Learn more
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </div>
-            </div>
+              className="work-card"
+            />
           ))}
         </div>
       </div>
@@ -100,3 +103,4 @@ export default function WorkAreasSection() {
     </section>
   );
 }
+

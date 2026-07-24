@@ -2,120 +2,150 @@ import type { WorkItem } from '../types/content';
 
 export const workItems: WorkItem[] = [
   {
-    id: 'five-rupee-notebook',
-    title: 'The ₹5 Notebook Initiative',
-    category: 'Education Innovation',
+    id: 'affordable-school-notebook',
+    title: 'Affordable School Notebook Programme',
+    category: 'Social Enterprise & Education',
     featured: true,
     description:
-      'Ultra-affordable school notebooks priced at ₹5, redesigning the entire value chain from paper quality to printing scale.',
+      'Pioneered an innovative social enterprise model to make quality school notebooks affordable (~₹5) for government and low-income school children across Bihar, Jharkhand, and West Bengal.',
     longDescription:
-      "One of Clarion's most widely recognised interventions has been the development of ultra-affordable school notebooks priced at ₹5, at a time when comparable notebooks in the market cost ₹25-₹30. We redesigned the entire notebook value chain — from paper quality to printing scale. IEC and social messaging was integrated on notebook covers and selected inner pages. Notebooks became a learning and awareness medium beyond school hours, engaging parents and guardians. Advertising by government departments, CSR programmes, and NGOs helped subsidise production costs.",
-    tags: ['Education', 'Innovation', 'Scale', 'Cost Reduction'],
+      'Clarion pioneered an innovative social enterprise model to make quality school notebooks affordable for children studying in government and low-income schools across Bihar, Jharkhand, and West Bengal. By integrating social awareness campaigns and educational messaging into notebook covers, Clarion substantially reduced production costs while creating a sustainable model for education financing.\n\nThe initiative addressed one of the most overlooked barriers to school education—the affordability and accessibility of notebooks—ensuring uninterrupted learning for economically disadvantaged children while simultaneously using educational materials as a medium for behavioural change communication. The model has been recognized internationally as an innovative education and social enterprise case study.',
+    tags: ['Affordable Education', 'School Notebooks', 'Social Enterprise', 'BCC'],
     impact: [
-      'Hundreds of thousands of notebooks distributed across Bihar, Jharkhand, and West Bengal',
-      'Adoption by multiple district administrations and government departments',
-      'Recognition as a case study in sustainability and social entrepreneurship',
+      'Over 3 million notebooks produced and distributed',
+      'Affordable notebooks made available at nearly ₹5 per notebook',
+      'Educational and awareness-based notebook content',
+      'Coverage across Bihar, Jharkhand and West Bengal',
+      'Sustainable social enterprise model linking education and communication',
     ],
   },
   {
-    id: 'iec-behaviour-change',
-    title: 'IEC & Behaviour Change Communication',
-    category: 'Communication',
+    id: 'educational-content-iec-bcc',
+    title: 'Educational Content Development & IEC/BCC Communication',
+    category: 'Content & Communication',
     featured: true,
     description:
-      'Contextual, visual, and behaviour-focused IEC material for low-literacy and rural audiences.',
+      'Designing comprehensive IEC and BCC materials—comics, activity books, posters, flipbooks, and newsletters—translating complex themes into child-friendly educational content.',
     longDescription:
-      'Clarion has developed a strong body of work in designing IEC material that is contextual, visual, and behaviour-focused, especially for low-literacy and rural audiences. Key formats include IEC-infused notebooks, posters, charts, visual advisories, comic books, illustrated narratives, thematic exercise books and learning aids. Our thematic focus areas include public health (COVID-19, hygiene, vaccination), child protection and safety, nutrition and maternal health, water, sanitation, and environmental conservation, and disaster preparedness and climate resilience.',
-    tags: ['Communication', 'Health', 'Rural', 'BCC'],
+      'Clarion has designed and developed a comprehensive portfolio of Information, Education and Communication (IEC) and Behaviour Change Communication (BCC) materials for government departments, educational institutions, development agencies and CSR initiatives.\n\nThe organisation specializes in translating complex developmental themes into child-friendly educational content through comics, activity books, posters, newsletters, flipbooks, teacher resources and visual learning materials. These resources have supported awareness campaigns on education, health, nutrition, sanitation, environment, livelihoods and social development across multiple districts. This aligns with Clarion\'s broader focus on innovative pedagogy and teacher support.',
+    tags: ['IEC/BCC Materials', 'Pedagogy', 'Activity Books', 'Awareness Campaigns'],
     impact: [
-      'IEC material reaching hundreds of thousands of children and families',
-      'Multi-state presence with contextual material for each region',
-      'Trusted partner to government departments and NGOs',
+      'Educational comics, posters, activity books, and flip books',
+      'Awareness campaigns across health, nutrition, sanitation, environment & livelihoods',
+      'School communication materials and community education resources',
+      'Child-friendly visual learning materials supporting teacher pedagogy',
+    ],
+  },
+  {
+    id: 'smart-classrooms-digital-learning',
+    title: 'Smart Classrooms & Digital Learning Solutions',
+    category: 'Digital Learning',
+    featured: true,
+    description:
+      'Transforming conventional classrooms into interactive spaces using digital boards, curriculum-aligned content, audio-visual modules, and teacher capacity building.',
+    longDescription:
+      'Clarion designs and implements technology-enabled learning environments that transform conventional classrooms into interactive educational spaces. The initiative integrates digital infrastructure, curriculum-aligned content, teacher support systems and learner-centric pedagogies to improve classroom engagement and learning outcomes.\n\nThe programme supports schools in adopting blended learning models through interactive digital boards, multimedia content, virtual learning resources and technology-enabled teaching practices, helping institutions become future-ready.',
+    tags: ['Smart Classrooms', 'Interactive Digital Boards', 'Audio-Visual', 'Teacher Training'],
+    impact: [
+      'Smart classrooms and interactive digital boards deployment',
+      'Curriculum-based digital content & audio-visual learning modules',
+      'Teacher capacity building for technology-enabled teaching',
+      'Hybrid, blended, and virtual learning solutions',
+    ],
+  },
+  {
+    id: 'digital-english-language-lab',
+    title: 'Digital English Language Lab Initiative',
+    category: 'Language & Skill Development',
+    featured: true,
+    description:
+      'A technology-enabled language laboratory for government schools (Classes VIII-XII) focusing on LSRW competencies, career readiness, and NEP 2020 & PM SHRI guidelines.',
+    longDescription:
+      'Clarion has developed a comprehensive Digital English Language Laboratory model for government schools to strengthen English communication, digital literacy and employability among students, particularly those in Classes VIII-XII.\n\nThe model combines technology-enabled language learning with structured pedagogy, continuous assessment, career readiness, digital skills and teacher training. Designed in alignment with NEP 2020 and PM SHRI guidelines, the initiative focuses on Listening, Speaking, Reading and Writing (LSRW) competencies while preparing students for higher education, competitive examinations and employment.',
+    tags: ['English Language Lab', 'LSRW Competencies', 'NEP 2020', 'PM SHRI'],
+    impact: [
+      'Digital Language Laboratory setup for government schools',
+      'LSRW-based English learning (Listening, Speaking, Reading, Writing)',
+      'Pronunciation and spoken English practice with continuous assessment',
+      'Digital literacy, career readiness modules, and employability skills',
+      'Teacher capacity building aligned with NEP 2020 & PM SHRI guidelines',
     ],
   },
   {
     id: 'mask-man-comic',
-    title: 'MASK-MAN Comic Series',
-    category: 'Edutainment',
-    featured: true,
+    title: 'Pandemic Awareness Comic Book – "MASK MAN"',
+    category: 'Health & Edutainment',
+    featured: false,
     description:
-      'A pandemic-sensitive comic book using storytelling and humour to communicate health awareness to children.',
+      'An innovative comic-based learning intervention using child-centric storytelling, interactive puzzles, and engaging characters to communicate COVID-19 prevention and hygiene.',
     longDescription:
-      'During the COVID-19 pandemic, Clarion conceptualised and developed MASK-MAN, a pandemic-sensitive comic book aimed at children and adolescents. The comic uses storytelling through fictional characters, humour, and peer-to-peer interaction. It clearly differentiates between facts, myths, and taboos with a step-by-step narrative flow: awareness → conflict → resolution → moral learning. Interactive elements include puzzles, crosswords, and QR codes linking to authentic advisories.',
-    tags: ['Edutainment', 'Health', 'Children', 'COVID-19'],
+      'During the COVID-19 pandemic, Clarion developed MASK MAN, an innovative comic-based learning intervention aimed at improving awareness among children and communities. Instead of conventional awareness material, the project adopted storytelling, engaging characters and interactive activities to communicate accurate information on COVID-19 prevention, hygiene practices and responsible behaviour.\n\nThe publication was designed to counter misinformation, reduce vaccine hesitancy, encourage preventive practices and promote peer-to-peer learning through an engaging narrative format suitable for school children.',
+    tags: ['Edutainment', 'Comic Storytelling', 'Health Education', 'COVID-19'],
     impact: [
-      'Enabled risk communication without fear-mongering',
-      'Improved engagement and recall among young readers',
-      'Demonstrated the effectiveness of edutainment as a public health tool',
+      'Child-centric comic storytelling with engaging characters',
+      'COVID-19 prevention and vaccine hesitancy reduction',
+      'Behaviour change communication and peer-to-peer learning',
+      'Interactive puzzles, crosswords, and health activities',
+      'School-based health education with improved readability',
     ],
   },
   {
-    id: 'cultural-documentation',
-    title: 'Cultural & Regional Documentation',
-    category: 'Cultural Heritage',
-    featured: true,
+    id: 'institutional-transformation',
+    title: 'Institutional Transformation & School Improvement',
+    category: 'Institutional Development',
+    featured: false,
     description:
-      'Thematic and culturally rooted educational material using regional icons and narratives to strengthen identity.',
+      'Partnering with educational institutions to strengthen school systems through integrated planning, modernization, curriculum enrichment, and teacher professional development.',
     longDescription:
-      'Clarion has worked on thematic and culturally rooted educational material, using regional icons and narratives to strengthen identity and engagement. Notable examples include Jannayak Birsa Munda themed notebooks and IEC material, as well as region-specific notebooks and visual stories reflecting local history, livelihoods, and aspirations. These interventions reinforce learning while simultaneously celebrating indigenous knowledge and regional pride.',
-    tags: ['Culture', 'Identity', 'Regional', 'Heritage'],
+      'Clarion partners with educational institutions to strengthen school systems through integrated educational planning, infrastructure development and academic support. The organisation provides consultancy and implementation support for school modernization, curriculum enrichment, teacher capacity building and institutional development.\n\nIts approach combines pedagogy, educational technology, innovation and governance to create learner-centric educational ecosystems that improve educational quality and institutional performance.',
+    tags: ['Institutional Building', 'School Modernization', 'Academic Planning', 'Teacher Support'],
     impact: [
-      'Preserved and promoted indigenous knowledge through educational materials',
-      'Strengthened regional identity among young learners',
-      'Created culturally relevant learning ecosystems',
+      'Institutional strengthening & school system modernization',
+      'Academic planning and curriculum support',
+      'Teacher professional development & capacity building',
+      'Digital education integration and educational innovation',
     ],
   },
   {
-    id: 'strategic-communication',
-    title: 'Strategic Communication & Branding',
-    category: 'Communications',
+    id: 'strategic-communication-branding',
+    title: 'Strategic Communication & Educational Branding',
+    category: 'Strategic Communication',
+    featured: false,
     description:
-      'Branding, PR support, social media management, and perception management for development initiatives.',
+      'Developing strategic communication campaigns, branding, educational publications, PR, and social media management for institutions and government agencies.',
     longDescription:
-      'Clarion has supported institutions and initiatives through strategic communication and branding, particularly in the development and public sector space. Key assignments include branding and PR support for Pan IIT Alumni initiatives in Jharkhand, social media management, stakeholder communication, and visibility enhancement, as well as perception management and narrative building for government-linked initiatives.',
-    tags: ['Branding', 'PR', 'Social Media', 'Strategy'],
+      'Beyond classroom interventions, Clarion develops strategic communication campaigns that enhance educational outreach, institutional visibility and public engagement. The organisation produces branding material, educational publications, multimedia content, newsletters and public awareness campaigns tailored for educational institutions, government agencies and development partners.\n\nThis capability enables schools and institutions to effectively communicate their achievements, programmes and educational initiatives while fostering stronger stakeholder engagement. The initiative also highlights Clarion\'s expertise in strategic communication, public relations and social media management.',
+    tags: ['Branding', 'Strategic Communication', 'Public Relations', 'Stakeholder Engagement'],
     impact: [
-      'Enhanced visibility for development initiatives',
-      'Structured communication strategies focusing on engagement and outreach',
-      'Dual capability in both strategy and execution',
+      'Tailored branding materials & educational publications',
+      'Multimedia content, newsletters & public awareness campaigns',
+      'Public relations & social media management',
+      'Enhanced institutional visibility & stakeholder engagement',
     ],
   },
   {
-    id: 'audio-visual-documentation',
-    title: 'Audio-Visual Documentation',
-    category: 'Documentation',
+    id: 'incredible-bihar-notebook',
+    title: 'Incredible Bihar – Integrated Educational Awareness Notebook',
+    category: 'Social Awareness & Publishing',
+    featured: false,
     description:
-      'Documenting institutional journeys and development models through professional audio-visual storytelling.',
+      'A flagship project with the Govt. of Bihar integrating public awareness campaigns (Dowry prohibition, Nasha Mukti, Swachh Bharat) directly into routine student exercise books.',
     longDescription:
-      'Clarion has undertaken assignments that involve documenting institutional journeys and development models. A key example includes NABARD - Jharkhand: Documentation of the journey of Farmer Producer Organisations (FPOs), capturing processes, milestones, and community-institution collaboration through audio-visual storytelling. These outputs serve both as learning resources and advocacy tools, enabling replication and policy learning.',
-    tags: ['Documentation', 'Video', 'FPO', 'NABARD'],
+      'Clarion Education & Skill Pvt. Ltd., Patna, partnered with the Government of Bihar to conceive, design, and publish the "Incredible Bihar" Exercise Book — an innovative educational notebook that reimagines everyday learning material as a vehicle for public awareness. Rather than producing a conventional notebook, Clarion wove high-quality illustrations, government campaign creatives, and carefully crafted educational messages throughout its pages, turning routine schoolwork into an ongoing channel of social awareness for every child who used it. Spanning themes such as responsible citizenship, health and sanitation, gender equality, environmental conservation, and disaster preparedness, the initiative extended its impact beyond the classroom, reaching families and communities through the simple, everyday act of a child opening their notebook — demonstrating how thoughtful educational publishing and behaviour change communication (BCC) can work hand in hand to drive meaningful social impact at scale.',
+    tags: ['Government of Bihar', 'Exercise Book', 'BCC & IEC', 'Social Awareness'],
     impact: [
-      'Captured institutional knowledge for replication',
-      'Created advocacy tools for policy learning',
-      'Documented community-institution collaboration',
-    ],
-  },
-  {
-    id: 'education-systems',
-    title: 'Education Systems & Academic Support',
-    category: 'Education Systems',
-    description:
-      'Curriculum design, learning frameworks, assessment tools, and competitive exam preparation material.',
-    longDescription:
-      "Beyond communication products, Clarion has contributed to designing school infrastructure layouts, supporting curriculum design and learning frameworks, developing study material and test series for competitive examinations, and creating subject-specific assessment tools for mathematics, English, aptitude, and foundational learning. This breadth of work highlights Clarion's strong grounding in education systems thinking.",
-    tags: ['Education', 'Curriculum', 'Assessment', 'Systems'],
-    impact: [
-      'Supported holistic education system improvement',
-      'Developed assessment tools for foundational learning',
-      'Created competitive exam preparation materials',
+      'Integration of flagship campaigns: Dowry Prohibition, Child Marriage Prevention & Anti-Alcohol (Nasha Mukti)',
+      'Coverage of Swachh Bharat Mission, Handwashing, Water Conservation & Hygiene',
+      'Promoted Bihar Bicycle Scheme, Bihar Student Credit Card & Seven Resolves (Saat Nischay)',
+      'Disaster Risk Reduction & Child Protection Awareness (Childline 1098)',
+      'Dual-purpose educational notebook and scalable mass communication platform',
     ],
   },
 ];
 
-// pulling out featured items so we don't have to filter them in every component
 export const featuredWorkItems = workItems.filter((item) => item.featured);
 
 export const workCategories = [
   'All',
   ...Array.from(new Set(workItems.map((item) => item.category))),
-];
+];
