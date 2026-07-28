@@ -31,10 +31,4 @@ export const timelineItems: TimelineItem[] = [
     description:
       'Extended operations across Bihar, Jharkhand, and West Bengal in collaboration with state government departments, NABARD, and key development partners.',
   },
-  {
-    year: '2024',
-    title: 'Full Portfolio',
-    description:
-      'Consolidated a comprehensive portfolio spanning education systems, audio-visual documentation, FPO institutional storytelling, and strategic communication.',
-  },
 ];

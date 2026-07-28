@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { coreBeliefs } from '../data/principles';
 import { timelineItems } from '../data/timeline';
+import { founders } from '../data/founders';
 import { useSEO } from '../hooks/useSEO';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -118,6 +119,63 @@ export default function About() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section className="about-section py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <p className="font-sans font-bold text-sm uppercase tracking-widest text-[#F58220] mb-4">
+              Leadership
+            </p>
+            <h2 className="font-sans font-bold text-3xl md:text-4xl text-gray-900 tracking-wide">
+              Guided by Vision, Driven by Purpose
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+            {founders.map((founder, index) => (
+              <div key={index} className="bg-gray-50 p-8 lg:p-10 rounded-2xl border border-gray-100 flex flex-col h-full">
+                {/* Image Placeholder */}
+                <div className="w-full aspect-[4/3] bg-gray-200/60 rounded-xl mb-8 flex items-center justify-center">
+                  <span className="text-gray-400 font-medium text-sm tracking-wide">Image Placeholder</span>
+                </div>
+                
+                <div className="mb-6">
+                  <h3 className="font-sans font-bold text-2xl text-gray-900 mb-1.5">
+                    {founder.name}
+                  </h3>
+                  <div className="flex flex-wrap items-center gap-2.5">
+                    <span className="font-sans text-[#2B468B] font-medium tracking-wide">
+                      {founder.title}
+                    </span>
+                    {founder.linkedin && (
+                      <div className="flex items-center gap-2.5">
+                        <span className="text-gray-300 font-bold">•</span>
+                        <a
+                          href={founder.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-[#2B468B] hover:text-[#F58220] transition-colors py-0.5 px-2 rounded-full bg-[#2B468B]/10 hover:bg-[#F58220]/10"
+                          aria-label={`${founder.name} on LinkedIn`}
+                        >
+                          <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                          </svg>
+                          <span>LinkedIn</span>
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className="space-y-4 text-gray-600 leading-relaxed text-base flex-grow">
+                  {founder.summary.map((paragraph, pIndex) => (
+                    <p key={pIndex}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
