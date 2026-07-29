@@ -89,6 +89,11 @@ export default function WorkModal({ work, onClose }: WorkModalProps) {
 
         {/* Content */}
         <div className="p-8 md:p-12 bg-white">
+          {work.image && (
+            <div className="w-full aspect-video bg-gray-100 rounded mb-10 overflow-hidden">
+              <img src={work.image} alt={work.title} className="w-full h-full object-cover" />
+            </div>
+          )}
           <p className="text-lg text-gray-700 leading-relaxed mb-10">
             {work.longDescription}
           </p>

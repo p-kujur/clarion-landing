@@ -6,6 +6,7 @@ export const workItems: WorkItem[] = [
     title: 'Affordable School Notebook Programme',
     category: 'Social Enterprise & Education',
     featured: true,
+    image: '/work/affordable-school-notebook/covernotebook.jpeg',
     description:
       'Pioneered an innovative social enterprise model to make quality school notebooks affordable (~₹5) for government and low-income school children across Bihar, Jharkhand, and West Bengal.',
     longDescription:
@@ -41,6 +42,7 @@ export const workItems: WorkItem[] = [
     title: 'Smart Classrooms & Digital Learning Solutions',
     category: 'Digital Learning',
     featured: true,
+    image: '/work/smart-classrooms-digital-learning/cover.jpg',
     description:
       'Transforming conventional classrooms into interactive spaces using digital boards, curriculum-aligned content, audio-visual modules, and teacher capacity building.',
     longDescription:
@@ -58,6 +60,7 @@ export const workItems: WorkItem[] = [
     title: 'Digital English Language Lab Initiative',
     category: 'Language & Skill Development',
     featured: true,
+    image: '/work/digital-english-language-lab/cover.jpg',
     description:
       'A technology-enabled language laboratory for government schools (Classes VIII-XII) focusing on LSRW competencies, career readiness, and NEP 2020 & PM SHRI guidelines.',
     longDescription:
@@ -94,6 +97,7 @@ export const workItems: WorkItem[] = [
     title: 'Institutional Transformation & School Improvement',
     category: 'Institutional Development',
     featured: false,
+    image: '/work/institutional-transformation/cover.jpg',
     description:
       'Partnering with educational institutions to strengthen school systems through integrated planning, modernization, curriculum enrichment, and teacher professional development.',
     longDescription:
@@ -111,6 +115,7 @@ export const workItems: WorkItem[] = [
     title: 'Strategic Communication & Educational Branding',
     category: 'Strategic Communication',
     featured: false,
+    image: '/work/strategic-communication-branding/cover.jpg',
     description:
       'Developing strategic communication campaigns, branding, educational publications, PR, and social media management for institutions and government agencies.',
     longDescription:

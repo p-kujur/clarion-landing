@@ -12,6 +12,11 @@ export default function WorkCard({ item, onClick, className = '' }: WorkCardProp
       onClick={onClick}
       className={`group cursor-pointer bg-white border border-gray-200 rounded p-8 shadow-sm hover:shadow-md transition-all flex flex-col h-full hover:border-[#2B468B]/30 ${className}`}
     >
+      {item.image && (
+        <div className="w-full aspect-[4/3] bg-gray-100 rounded mb-6 overflow-hidden">
+          <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+      )}
       <div className="mb-auto">
         <p className="font-sans font-bold text-xs uppercase tracking-wider text-[#F58220] mb-3">
           {item.category}

@@ -7,6 +7,7 @@ export interface WorkItem {
   tags: string[];
   impact?: string[];
   featured?: boolean;
+  image?: string;
 }
 
 export interface TimelineItem {

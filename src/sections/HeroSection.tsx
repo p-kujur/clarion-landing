@@ -60,6 +60,30 @@ export default function HeroSection() {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#2B468B] pt-20"
     >
+      {/* Left Image Background */}
+      <div 
+        className="absolute inset-y-0 left-0 w-[60%] z-0"
+        style={{ 
+          backgroundImage: "url('/hero/hero1.jpg')", 
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center',
+          WebkitMaskImage: 'linear-gradient(to right, black 60%, transparent 100%)',
+          maskImage: 'linear-gradient(to right, black 60%, transparent 100%)'
+        }} 
+      />
+      {/* Right Image Background */}
+      <div 
+        className="absolute inset-y-0 right-0 w-[60%] z-0"
+        style={{ 
+          backgroundImage: "url('/hero/hero2.jpg')", 
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center',
+          WebkitMaskImage: 'linear-gradient(to left, black 60%, transparent 100%)',
+          maskImage: 'linear-gradient(to left, black 60%, transparent 100%)'
+        }} 
+      />
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-[#2B468B]/80 z-0 pointer-events-none" />
       {/* Animated particles overlay (Kept from original but recolored to fit the new blue theme) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {particles.map((p) => (
