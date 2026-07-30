@@ -54,7 +54,7 @@ const PhilosophySection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 md:py-32 bg-gray-50 border-t border-gray-100"
+      className="relative pt-20 md:pt-32 pb-0 bg-gray-50 border-t border-gray-100"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section label */}

@@ -62,7 +62,7 @@ export default function WorkAreasSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-32 bg-gray-50/50">
+    <section ref={sectionRef} className="relative pt-8 md:pt-16 pb-20 md:pb-32 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div
