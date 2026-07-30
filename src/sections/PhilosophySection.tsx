@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { homePrinciples } from '../data/principles';
+import HomeGallerySlider from '../components/HomeGallerySlider';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +10,6 @@ const PhilosophySection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const quoteRef = useRef<HTMLHeadingElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
-  const principlesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -47,27 +46,6 @@ const PhilosophySection = () => {
           },
         }
       );
-
-      // Principles stagger
-      if (principlesRef.current) {
-        const items = principlesRef.current.querySelectorAll('.principle-item');
-        gsap.fromTo(
-          items,
-          { y: 40, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: principlesRef.current,
-              start: 'top 75%',
-              toggleActions: 'play none none reverse',
-            },
-          }
-        );
-      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -90,8 +68,8 @@ const PhilosophySection = () => {
           className="font-sans font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900 leading-tight tracking-wide mb-12 max-w-4xl"
         >
           At Clarion, we believe that{' '}
-          <span className="text-[#F58220]">education</span> extends
-          beyond classrooms. We believe that communication, when designed
+          <span className="text-[#F58220]">knowledge</span> extends
+          beyond boundaries. We believe that communication, when designed
           responsibly, can shift{' '}
           <span className="text-[#F58220]">behaviour at scale</span>.
         </h2>
@@ -99,27 +77,14 @@ const PhilosophySection = () => {
         {/* Body */}
         <div ref={bodyRef} className="max-w-3xl mb-16">
           <p className="text-lg text-gray-600 leading-relaxed">
-            From reimagining the economics of school stationery to developing
-            culturally rooted educational material, Clarion's work reflects a
+            From reimagining the economics of everyday learning tools to developing
+            culturally rooted knowledge material, Clarion's work reflects a
             deep understanding of grassroots realities and a strong capability
             to translate policy intent into tangible, people-centric outcomes.
           </p>
         </div>
-
-        {/* Principles */}
-        <div ref={principlesRef} className="grid md:grid-cols-3 gap-12">
-          {homePrinciples.map((principle, i) => (
-            <div
-              key={i}
-              className="principle-item border-t-2 border-gray-200 pt-6"
-            >
-              <span className="font-sans font-bold text-sm text-[#F58220] mb-4 block">
-                0{i + 1}
-              </span>
-              <p className="font-sans font-bold text-xl text-gray-900 leading-snug">{principle}</p>
-            </div>
-          ))}
-        </div>
+        
+        <HomeGallerySlider />
       </div>
     </section>
   );

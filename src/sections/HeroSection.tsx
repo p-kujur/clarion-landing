@@ -111,7 +111,7 @@ export default function HeroSection() {
             <br />
             AND IMPACT THROUGH
             <br />
-            EDUCATION & COMMUNICATION
+            KNOWLEDGE & COMMUNICATION
           </h1>
 
           <p
@@ -119,7 +119,7 @@ export default function HeroSection() {
             className="font-sans text-base md:text-lg text-white/90 leading-relaxed max-w-2xl mb-8"
           >
             Clarion Education & Skill Pvt. Ltd. is a purpose-driven social
-            enterprise designing low-cost, high-impact educational and
+            enterprise designing cost-effective, high-impact knowledge and
             communication solutions for governments, institutions,
             corporates, and communities.
           </p>

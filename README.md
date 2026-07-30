@@ -60,9 +60,19 @@ Configure your host to serve `index.html` for all routes (SPA fallback).
 │   ├── pages/          # Home, About, Work, Contact
 │   ├── sections/     # Home page sections
 │   └── App.tsx         # Routes
+├── scripts/
+│   └── generate-gallery-manifest.js # Pre-build script for gallery images
 ├── index.html
 └── vite.config.ts
 ```
+
+## Adding Project Gallery Images
+
+To add additional images to a project's gallery (which automatically appear in an interactive slider on the Work Modal):
+1. Navigate to `public/work/<project-id>/` (e.g. `public/work/affordable-school-notebook/`).
+2. Create a `gallery/` folder if it doesn't exist.
+3. Drop your images inside (`.jpg`, `.png`, `.webp`, etc.).
+4. The system will automatically pick them up on the next `npm run dev` or `npm run build` and display them in the modal.
 
 ## Design
 

@@ -1,15 +1,17 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { coreBeliefs } from '../data/principles';
 import { timelineItems } from '../data/timeline';
-import { founders } from '../data/founders';
+import { founders, type Founder } from '../data/founders';
 import { useSEO } from '../hooks/useSEO';
+import FounderModal from '../components/FounderModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   const pageRef = useRef<HTMLDivElement>(null);
+  const [selectedFounder, setSelectedFounder] = useState<Founder | null>(null);
 
   useSEO({
     title: 'About Us | Clarion Education & Skill',
@@ -97,17 +99,16 @@ export default function About() {
               <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
                 <p>
                   Clarion Education & Skill Pvt. Ltd. is a purpose-driven social
-                  enterprise that operates at the intersection of education,
+                  enterprise that operates at the intersection of knowledge,
                   communication, and social innovation. Founded with the belief
                   that access to quality learning tools and credible information
                   should not be constrained by geography or income, Clarion has
-                  consistently worked to design low-cost, high-impact educational
+                  consistently worked to design cost-effective, high-impact learning
                   and communication solutions.
                 </p>
                 <p>
-                  From reimagining the economics of school stationery to
-                  developing culturally rooted IEC (Information, Education and
-                  Communication) material, Clarion's work reflects a deep
+                  From reimagining the economics of everyday learning tools to
+                  developing culturally rooted knowledge material, Clarion's work reflects a deep
                   understanding of grassroots realities and a strong capability
                   to translate policy intent into tangible, people-centric
                   outcomes.
@@ -136,14 +137,22 @@ export default function About() {
           </div>
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             {founders.map((founder, index) => (
-              <div key={index} className="bg-gray-50 p-8 lg:p-10 rounded-2xl border border-gray-100 flex flex-col h-full">
+              <button
+                key={index}
+                onClick={() => setSelectedFounder(founder)}
+                className="group text-left bg-gray-50 p-8 lg:p-10 rounded-2xl border border-gray-100 flex flex-col h-full hover:shadow-xl hover:border-[#F58220]/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#F58220]"
+              >
                 {/* Image Placeholder */}
-                <div className="w-full aspect-[4/3] bg-gray-200/60 rounded-xl mb-8 flex items-center justify-center">
-                  <span className="text-gray-400 font-medium text-sm tracking-wide">Image Placeholder</span>
+                <div className="w-full aspect-[4/3] rounded-xl mb-8 flex items-center justify-center overflow-hidden bg-gray-200/60">
+                  {founder.image ? (
+                    <img src={founder.image} alt={founder.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  ) : (
+                    <span className="text-gray-400 font-medium text-sm tracking-wide transition-transform duration-500 group-hover:scale-105">Image Placeholder</span>
+                  )}
                 </div>
                 
-                <div className="mb-6">
-                  <h3 className="font-sans font-bold text-2xl text-gray-900 mb-1.5">
+                <div className="mb-4">
+                  <h3 className="font-sans font-bold text-2xl text-gray-900 mb-1.5 group-hover:text-[#2B468B] transition-colors">
                     {founder.name}
                   </h3>
                   <div className="flex flex-wrap items-center gap-2.5">
@@ -157,6 +166,7 @@ export default function About() {
                           href={founder.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1.5 text-sm font-medium text-[#2B468B] hover:text-[#F58220] transition-colors py-0.5 px-2 rounded-full bg-[#2B468B]/10 hover:bg-[#F58220]/10"
                           aria-label={`${founder.name} on LinkedIn`}
                         >
@@ -169,12 +179,29 @@ export default function About() {
                     )}
                   </div>
                 </div>
-                <div className="space-y-4 text-gray-600 leading-relaxed text-base flex-grow">
-                  {founder.summary.map((paragraph, pIndex) => (
-                    <p key={pIndex}>{paragraph}</p>
-                  ))}
+                
+                <div className="text-gray-600 leading-relaxed text-base flex-grow line-clamp-3 mb-6">
+                  {founder.summary[0]}
                 </div>
-              </div>
+
+                <div className="mt-auto flex items-center gap-2 text-[#F58220] font-bold text-sm tracking-wide uppercase">
+                  <span>Read Full Bio</span>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transform transition-transform group-hover:translate-x-1"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </div>
+              </button>
             ))}
           </div>
         </div>
@@ -257,6 +284,13 @@ export default function About() {
           </div>
         </div>
       </section>
+      
+      {selectedFounder && (
+        <FounderModal
+          founder={selectedFounder}
+          onClose={() => setSelectedFounder(null)}
+        />
+      )}
     </div>
   );
 }

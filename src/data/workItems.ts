@@ -4,7 +4,7 @@ export const workItems: WorkItem[] = [
   {
     id: 'affordable-school-notebook',
     title: 'Affordable School Notebook Programme',
-    category: 'Social Enterprise & Education',
+    category: 'Education Access & Affordability',
     featured: true,
     image: '/work/affordable-school-notebook/covernotebook.jpeg',
     description:
@@ -23,7 +23,7 @@ export const workItems: WorkItem[] = [
   {
     id: 'educational-content-iec-bcc',
     title: 'Educational Content Development & IEC/BCC Communication',
-    category: 'Content & Communication',
+    category: 'Content & Communication (IEC/BCC)',
     featured: true,
     description:
       'Designing comprehensive IEC and BCC materials—comics, activity books, posters, flipbooks, and newsletters—translating complex themes into child-friendly educational content.',
@@ -40,7 +40,7 @@ export const workItems: WorkItem[] = [
   {
     id: 'smart-classrooms-digital-learning',
     title: 'Smart Classrooms & Digital Learning Solutions',
-    category: 'Digital Learning',
+    category: 'Digital & Technology-Enabled Learning',
     featured: true,
     image: '/work/smart-classrooms-digital-learning/cover.jpg',
     description:
@@ -58,7 +58,7 @@ export const workItems: WorkItem[] = [
   {
     id: 'digital-english-language-lab',
     title: 'Digital English Language Lab Initiative',
-    category: 'Language & Skill Development',
+    category: 'Digital & Technology-Enabled Learning',
     featured: true,
     image: '/work/digital-english-language-lab/cover.jpg',
     description:
@@ -77,8 +77,9 @@ export const workItems: WorkItem[] = [
   {
     id: 'mask-man-comic',
     title: 'Pandemic Awareness Comic Book – "MASK MAN"',
-    category: 'Health & Edutainment',
+    category: 'Content & Communication (IEC/BCC)',
     featured: false,
+    image: '/work/mask-man-comic/maskcover.jpg',
     description:
       'An innovative comic-based learning intervention using child-centric storytelling, interactive puzzles, and engaging characters to communicate COVID-19 prevention and hygiene.',
     longDescription:
@@ -95,7 +96,7 @@ export const workItems: WorkItem[] = [
   {
     id: 'institutional-transformation',
     title: 'Institutional Transformation & School Improvement',
-    category: 'Institutional Development',
+    category: 'Institutional & Strategic Development',
     featured: false,
     image: '/work/institutional-transformation/cover.jpg',
     description:
@@ -113,7 +114,7 @@ export const workItems: WorkItem[] = [
   {
     id: 'strategic-communication-branding',
     title: 'Strategic Communication & Educational Branding',
-    category: 'Strategic Communication',
+    category: 'Institutional & Strategic Development',
     featured: false,
     image: '/work/strategic-communication-branding/cover.jpg',
     description:
@@ -131,7 +132,7 @@ export const workItems: WorkItem[] = [
   {
     id: 'incredible-bihar-notebook',
     title: 'Incredible Bihar – Integrated Educational Awareness Notebook',
-    category: 'Social Awareness & Publishing',
+    category: 'Education Access & Affordability',
     featured: false,
     description:
       'A flagship project with the Govt. of Bihar integrating public awareness campaigns (Dowry prohibition, Nasha Mukti, Swachh Bharat) directly into routine student exercise books.',

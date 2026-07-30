@@ -5,7 +5,7 @@ export const timelineItems: TimelineItem[] = [
     year: '2014',
     title: 'Foundation',
     description:
-      'Clarion Education & Skill Pvt. Ltd. was founded as a purpose-driven social enterprise to design low-cost, high-impact learning solutions.',
+      'Clarion Education & Skill Pvt. Ltd. was founded as a purpose-driven social enterprise to design cost-effective, high-impact learning solutions.',
   },
   {
     year: '2016',

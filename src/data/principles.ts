@@ -1,7 +1,7 @@
 import type { Belief } from '../types/content';
 
 export const homePrinciples = [
-  'Education extends beyond classrooms and textbooks',
+  'Knowledge extends beyond boundaries and textbooks',
   'Every everyday object can become a learning medium',
   'Communication, when designed responsibly, can shift behaviour at scale',
 ];
@@ -9,9 +9,9 @@ export const homePrinciples = [
 // keeping these simple for now, might need to add icons later
 export const coreBeliefs: Belief[] = [
   {
-    title: 'Education Beyond Classrooms',
+    title: 'Knowledge Beyond Boundaries',
     description:
-      'Education extends beyond classrooms and textbooks. Every everyday object can become a learning medium.',
+      'Knowledge extends beyond boundaries and textbooks. Every everyday object can become a learning medium.',
   },
   {
     title: 'Communication as Change Agent',
