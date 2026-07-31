@@ -25,11 +25,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-start">
           {/* Brand Column (5 cols) */}
           <div className="md:col-span-5 flex flex-col">
-            <Link to="/" className="flex items-center gap-3 mb-5 h-7 group">
+            <Link to="/" className="flex items-center gap-1.5 mb-5 h-7 group">
               <div className="flex items-center">
                 <img src="/images/clarion-logo.png" alt="Clarion" className="h-6 md:h-7 object-contain" />
               </div>
-              <span className="font-serif font-semibold text-[1.35rem] text-white flex items-baseline">
+              <span className="font-real-serif font-normal text-[1.6rem] text-white flex items-baseline">
                 global
               </span>
             </Link>

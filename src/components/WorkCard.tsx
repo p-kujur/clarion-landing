@@ -14,7 +14,7 @@ export default function WorkCard({ item, onClick, className = '' }: WorkCardProp
     >
       {item.image && (
         <div className="w-full aspect-[4/3] bg-gray-100 rounded mb-6 overflow-hidden">
-          <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <img src={item.image} alt={item.title} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
         </div>
       )}
       <div className="mb-auto">

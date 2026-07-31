@@ -65,4 +65,8 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.font-real-serif {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
 }

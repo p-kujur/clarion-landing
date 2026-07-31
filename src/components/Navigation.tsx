@@ -51,14 +51,14 @@ export default function Navigation() {
           {/* Brand */}
           <Link
             to="/"
-            className="flex items-center gap-3 transition-opacity hover:opacity-80"
+            className="flex items-center gap-1.5 transition-opacity hover:opacity-80"
             aria-label="Clarion Global"
           >
             <div className="flex items-center">
               <img src="/images/clarion-logo.png" alt="" className="h-5 md:h-7 object-contain" aria-hidden="true" />
             </div>
             <span className="flex items-baseline" aria-hidden="true">
-              <span className="font-serif font-semibold text-[1.35rem] text-[#2B468B] ml-1">global</span>
+              <span className="font-real-serif font-normal text-[1.6rem] text-gray-500">global</span>
             </span>
           </Link>
 

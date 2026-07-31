@@ -87,7 +87,7 @@ export default function WorkAreasSection() {
 
         {/* Cards Grid */}
         <div ref={cardsRef} className="grid md:grid-cols-2 gap-8">
-          {featuredWorkItems.slice(0, 4).map((area) => (
+          {featuredWorkItems.slice(0, 6).map((area) => (
             <WorkCard
               key={area.id}
               item={area}

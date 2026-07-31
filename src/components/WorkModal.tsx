@@ -109,7 +109,7 @@ export default function WorkModal({ work, onClose }: WorkModalProps) {
         <div className="p-8 md:p-12 bg-white grow">
           {work.image && (
             <div className="w-full aspect-video bg-gray-100 rounded mb-10 overflow-hidden">
-              <img src={work.image} alt={work.title} className="w-full h-full object-cover" />
+              <img src={work.image} alt={work.title} className="w-full h-full object-contain" />
             </div>
           )}
 
@@ -144,7 +144,7 @@ export default function WorkModal({ work, onClose }: WorkModalProps) {
                 <img
                   src={galleryImages[currentImageIndex]}
                   alt={`${work.title} - Gallery Image ${currentImageIndex + 1}`}
-                  className="w-full h-full object-cover transition-opacity duration-300"
+                  className="w-full h-full object-contain transition-opacity duration-300"
                 />
                 
                 {galleryImages.length > 1 && (

@@ -78,9 +78,9 @@ export default function Work() {
           </h1>
           <p className="text-lg text-white/90 max-w-3xl mx-auto lg:mx-0">
             From affordable school notebook programmes to smart classroom
-            solutions, digital language labs, and government campaign
-            integrations, explore our multidisciplinary initiatives transforming
-            learning ecosystems.
+            solutions, digital language labs, government campaign integrations,
+            branding and digital marketing, explore our multidisciplinary initiatives
+            transforming learning ecosystems.
           </p>
         </div>
       </section>
@@ -99,6 +99,20 @@ export default function Work() {
                   <h2 className="font-sans font-bold text-xl uppercase tracking-wide text-[#F58220] mb-6">
                     {cat}
                   </h2>
+                  {cat === 'Education Access & Affordability' && (
+                    <div className="mb-6 w-full rounded shadow-sm bg-gray-100 border border-gray-200">
+                      <video 
+                        controls={true}
+                        controlsList="nodownload"
+                        className="w-full rounded object-contain"
+                        src="/education-video.mp4"
+                        poster="/videos/video cover.jpg"
+                        style={{ height: '180px' }}
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  )}
                   <ul className="flex flex-col gap-4 flex-grow">
                     {items.map((item) => (
                       <li key={item.id} className="project-list-item flex-1">

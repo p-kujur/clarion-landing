@@ -3,10 +3,23 @@
     "/work/affordable-school-notebook/gallery/gal1.jpeg",
     "/work/affordable-school-notebook/gallery/gal2.jpeg"
   ],
+  "incredible-bihar-notebook": [
+    "/work/incredible-bihar-notebook/gallery/gal1.jpg",
+    "/work/incredible-bihar-notebook/gallery/gal2.jpg",
+    "/work/incredible-bihar-notebook/gallery/gal3.jpeg",
+    "/work/incredible-bihar-notebook/gallery/gal4.jpeg",
+    "/work/incredible-bihar-notebook/gallery/gal5.jpeg"
+  ],
+  "strategic-communication-branding": [
+    "/work/strategic-communication-branding/gallery/gal1.jpg",
+    "/work/strategic-communication-branding/gallery/gal2.jpg",
+    "/work/strategic-communication-branding/gallery/gal3.jpg"
+  ],
   "home-gallery": [
     "/home-gallery/homegal1.jpeg",
     "/home-gallery/homegal2.jpeg",
     "/home-gallery/homegal3.jpeg",
-    "/home-gallery/homegal4.jpeg"
+    "/home-gallery/homegal4.jpeg",
+    "/home-gallery/homegal5.jpg"
   ]
 }

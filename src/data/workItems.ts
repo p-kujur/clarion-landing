@@ -133,6 +133,7 @@ export const workItems: WorkItem[] = [
     id: 'incredible-bihar-notebook',
     title: 'Incredible Bihar – Integrated Educational Awareness Notebook',
     category: 'Education Access & Affordability',
+    image: '/work/incredible-bihar-notebook/incredbiharcover.jpg',
     featured: false,
     description:
       'A flagship project with the Govt. of Bihar integrating public awareness campaigns (Dowry prohibition, Nasha Mukti, Swachh Bharat) directly into routine student exercise books.',
@@ -147,6 +148,23 @@ export const workItems: WorkItem[] = [
       'Dual-purpose educational notebook and scalable mass communication platform',
     ],
   },
+  {
+    id: 'puhas',
+    title: 'Puhas Branding',
+    category: 'Product Branding',
+    image: '/work/puhas/puhascover.jpg',
+    featured: false,
+    description:
+      'Comprehensive product branding and digital marketing strategy developed for Puhas, focusing on establishing a strong brand identity and market presence.',
+    longDescription:
+      'Clarion developed a comprehensive product branding and digital marketing strategy for Puhas, encompassing every stage from initial concept to execution. This initiative was centered on establishing a strong and distinctive brand identity, along with a clear market positioning that set Puhas apart. Central to the strategy was the goal of engaging target audiences effectively, achieved through carefully tailored communication channels and well-crafted digital campaigns designed to resonate with the intended audience.',
+    tags: ['Product Branding', 'Digital Marketing', 'Brand Identity'],
+    impact: [
+      'Developed strong brand identity and market positioning',
+      'Executed targeted digital marketing campaigns',
+      'Enhanced market visibility and audience engagement',
+    ],
+  },
 ];
 
 export const featuredWorkItems = workItems.filter((item) => item.featured);
@@ -154,4 +172,4 @@ export const featuredWorkItems = workItems.filter((item) => item.featured);
 export const workCategories = [
   'All',
   ...Array.from(new Set(workItems.map((item) => item.category))),
-];
+];

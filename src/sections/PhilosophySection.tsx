@@ -79,7 +79,7 @@ const PhilosophySection = () => {
           <p className="text-lg text-gray-600 leading-relaxed">
             From reimagining the economics of everyday learning tools to developing
             culturally rooted knowledge material, Clarion's work reflects a
-            deep understanding of grassroots realities and a strong capability
+            deep understanding of grassroot realities and a strong capability
             to translate policy intent into tangible, people-centric outcomes.
           </p>
         </div>

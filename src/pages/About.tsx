@@ -108,8 +108,8 @@ export default function About() {
                 </p>
                 <p>
                   From reimagining the economics of everyday learning tools to
-                  developing culturally rooted knowledge material, Clarion's work reflects a deep
-                  understanding of grassroots realities and a strong capability
+                  developing culturally rooted knowledge enhancing material, Clarion's work reflects a deep
+                  understanding of grassroot realities and a strong capability
                   to translate policy intent into tangible, people-centric
                   outcomes.
                 </p>
@@ -277,6 +277,10 @@ export default function About() {
                     <p className="text-base text-gray-600 leading-relaxed">
                       {item.description}
                     </p>
+                    {/* Image Placeholder */}
+                    <div className="mt-6 w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                      <span className="text-gray-400 font-medium text-sm">Image Placeholder</span>
+                    </div>
                   </div>
                 </div>
               ))}
