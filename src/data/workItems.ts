@@ -165,6 +165,24 @@ export const workItems: WorkItem[] = [
       'Enhanced market visibility and audience engagement',
     ],
   },
+  {
+    id: 'sattu',
+    title: 'Sattu – Brand Identity & Packaging',
+    category: 'Product Branding',
+    image: '/work/sattu/sattucover.jpg',
+    featured: false,
+    description:
+      'Comprehensive product branding, packaging design, and visual identity developed for Sattu, highlighting traditional heritage with modern nutritional appeal.',
+    longDescription:
+      'Clarion developed the complete brand identity, visual system, and packaging design for Sattu, a premium roasted chickpea flour product. The design strategy merged traditional rustic aesthetics with clean, modern minimal packaging to appeal to health-conscious urban consumers. The project included designing eco-friendly pouches, creating custom illustrations depicting the traditional roasting process, and defining a color palette inspired by nature. A comprehensive launch campaign strategy was also created to position Sattu as a versatile daily superfood.',
+    tags: ['Product Branding', 'Packaging Design', 'Visual Identity', 'Eco-Friendly Packaging'],
+    impact: [
+      'Designed premium, eco-friendly packaging for three product variants (Classic, Spicy, and Herb-infused)',
+      'Created a distinctive brand identity showcasing traditional heritage with modern aesthetics',
+      'Developed comprehensive marketing collateral and social media launch assets',
+      'Positioned the traditional superfood to appeal to health-conscious modern consumer segments',
+    ],
+  },
 ];
 
 export const featuredWorkItems = workItems.filter((item) => item.featured);

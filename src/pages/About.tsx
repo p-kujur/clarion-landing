@@ -277,10 +277,16 @@ export default function About() {
                     <p className="text-base text-gray-600 leading-relaxed">
                       {item.description}
                     </p>
-                    {/* Image Placeholder */}
-                    <div className="mt-6 w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
-                      <span className="text-gray-400 font-medium text-sm">Image Placeholder</span>
-                    </div>
+                    {/* Milestone Image */}
+                    {item.image ? (
+                      <div className="mt-6 w-full h-48 bg-gray-100 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                        <img src={item.image} alt={item.title} className={`w-full h-full object-cover ${item.imagePosition || ''}`} />
+                      </div>
+                    ) : (
+                      <div className="mt-6 w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                        <span className="text-gray-400 font-medium text-sm">Image Placeholder</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
