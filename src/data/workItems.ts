@@ -25,6 +25,7 @@ export const workItems: WorkItem[] = [
     title: 'Educational Content Development & IEC/BCC Communication',
     category: 'Content & Communication (IEC/BCC)',
     featured: true,
+    image: '/work/educational-content-iec-bcc/ieccover.jpg',
     description:
       'Designing comprehensive IEC and BCC materials—comics, activity books, posters, flipbooks, and newsletters—translating complex themes into child-friendly educational content.',
     longDescription:
